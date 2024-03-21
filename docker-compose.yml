@@ -1,0 +1,44 @@
+version: '3.3'
+services:
+  mysql:
+    container_name: mysql-app
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ${DB_NAME:-default_superindo_db}
+      MYSQL_USER: ${DB_USERNAME:-default_superindo}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-default_123456}
+    ports:
+      - "3306:3306"
+
+  redis:
+    container_name: redis-app
+    image: redis:latest
+    restart: always
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-default_123456}
+    ports:
+      - "6379:6379"
+
+  golang-app:
+    container_name: superindo-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+      - redis
+    ports:
+      - "5067:5067"
+    environment:
+      APP_PORT: "5067"
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_USERNAME: ${DB_USERNAME:-default_superindo}
+      DB_PASSWORD: ${DB_PASSWORD:-default_123456}
+      DB_NAME: ${DB_NAME:-default_superindo_db}
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-default_123456}
+      REDIS_USERNAME: default
