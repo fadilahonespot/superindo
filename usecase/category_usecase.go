@@ -14,7 +14,7 @@ import (
 )
 
 type CategoryUsecase interface {
-	GetCategories(ctx context.Context) (resp []dto.Category, err error)
+	GetCategories(ctx context.Context) (resp []dto.CategoryResponse, err error)
 }
 
 type defaultCategoryUsecase struct {
@@ -26,7 +26,7 @@ func NewCategoryUsecase(categoryRepo repository.CategoryRepository, redisService
 	return &defaultCategoryUsecase{categoryRepo, redisService}
 }
 
-func (s *defaultCategoryUsecase) GetCategories(ctx context.Context) (resp []dto.Category, err error) {
+func (s *defaultCategoryUsecase) GetCategories(ctx context.Context) (resp []dto.CategoryResponse, err error) {
 	key := "GetCategories"
 	value, _ := s.redisService.Get(ctx, key)
 	if value == "" {
@@ -38,7 +38,7 @@ func (s *defaultCategoryUsecase) GetCategories(ctx context.Context) (resp []dto.
 		}
 
 		for i := 0; i < len(datas); i++ {
-			resp = append(resp, dto.Category{
+			resp = append(resp, dto.CategoryResponse{
 				Id:   datas[i].ID,
 				Name: datas[i].Name,
 			})

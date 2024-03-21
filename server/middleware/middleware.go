@@ -31,7 +31,7 @@ func setLoggerMiddleware() echo.MiddlewareFunc {
 		return func(c echo.Context) error {
 
 			ctxLogger := logres.Context{
-				ServiceName:    "simple-api",
+				ServiceName:    "superindo-api",
 				ServiceVersion: "1.0.0",
 				ServicePort:    cast.ToInt(os.Getenv("APP_PORT")),
 				ThreadID:       uuid.New().String(),

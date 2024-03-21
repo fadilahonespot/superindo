@@ -5,12 +5,12 @@ import (
 )
 
 type ProductRequest struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Weight      int    `json:"weight"`
-	Price       int    `json:"price"`
-	CategoryID  int    `json:"categoryId"`
-	Image       string `json:"image"`
+	Name        string `json:"name" validate:"required"`
+	Description string `json:"description" validate:"required"`
+	Weight      int    `json:"weight" validate:"required"`
+	Price       int    `json:"price" validate:"required"`
+	CategoryID  int    `json:"categoryId" validate:"required"`
+	Image       string `json:"image" validate:"required"`
 }
 
 type ProductListResponse struct {
