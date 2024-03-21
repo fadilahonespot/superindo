@@ -38,6 +38,7 @@ services:
       DB_USERNAME: ${DB_USERNAME:-default_superindo}
       DB_PASSWORD: ${DB_PASSWORD:-default_123456}
       DB_NAME: ${DB_NAME:-default_superindo_db}
+      DB_DEBUG: true
       REDIS_HOST: redis
       REDIS_PORT: "6379"
       REDIS_PASSWORD: ${REDIS_PASSWORD:-default_123456}
