@@ -4,6 +4,16 @@
 
 This document provides comprehensive instructions on setting up and configuring the Superindo API project. It includes steps for both Docker container deployment and local machine setup using a `.env` file.
 
+## Tech Stack
+
+* Language: Golang
+* Database: Mysql + Gorm (Seeder + Migration)
+* Cache: Redis
+* Router: Echo
+* Unit Test
+* Logger 
+* Docker
+
 ## Prerequisites
 
 Before you start, make sure you have the following:
