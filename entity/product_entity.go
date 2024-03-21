@@ -8,7 +8,7 @@ import (
 )
 
 type Product struct {
-	ID          string `gorm:"primarykey"`
+	ID          string `gorm:"size:50;primarykey"`
 	Name        string
 	Description string
 	Image       string
