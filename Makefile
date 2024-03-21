@@ -31,7 +31,7 @@ delete:
 	@echo "=================================================================================="
 	@echo "Delete Images"
 	@echo "=================================================================================="
-	docker rmi superindo_golang-app:latest || true
+	docker rmi superindo-golang-app:latest || true
 	docker rmi golang:latest || true
 	docker rmi redis:latest || true
 	docker rmi mysql:latest || true
