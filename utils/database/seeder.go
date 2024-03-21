@@ -22,7 +22,7 @@ func Seeder(db *gorm.DB) *gorm.DB {
 			tx.Rollback()
 			log.Fatal(err)
 		}
-		db = tx.Exec(string(sqlFile))
+		tx = tx.Exec(string(sqlFile))
 		if err != nil {
 			tx.Rollback()
 			log.Fatal(err)
@@ -41,7 +41,7 @@ func Seeder(db *gorm.DB) *gorm.DB {
 			tx.Rollback()
 			log.Fatal(err)
 		}
-		db = tx.Exec(string(sqlFile))
+		tx = tx.Exec(string(sqlFile))
 		if err != nil {
 			tx.Rollback()
 			log.Fatal(err)
@@ -49,5 +49,5 @@ func Seeder(db *gorm.DB) *gorm.DB {
 	}
 
 	tx.Commit()
-	return db
+	return tx
 }
