@@ -93,7 +93,7 @@ To set up the application on your local machine, follow these steps:
 ## Additional
 
 - Import Postman Collection:
-    Use Postman to export the provided collection file [Superindo Postman](https://github.com/fadilahonespot/superindo/blob/master/resources/Superindo.postman_collection.json) to your postman.
+    Use Postman to import the provided collection file [Superindo Postman](https://github.com/fadilahonespot/superindo/blob/master/resources/Superindo.postman_collection.json) to your postman for testing superindo API.
 
 
 # API Documentation
