@@ -38,7 +38,8 @@ func InitDB() *gorm.DB {
 		DB = DB.Debug()
 	}
 
-	DB.AutoMigrate(&entity.Category{}, &entity.Product{})
+	DB.AutoMigrate(&entity.Category{})
+	DB.AutoMigrate(&entity.Product{})
 
 	DB = Seeder(DB)
 
