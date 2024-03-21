@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "760042af-3f2e-4ba1-bc11-157e271a45f7",
+		"name": "Superindo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10350858"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/category",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:7690/category",
+									"host": [
+										"localhost"
+									],
+									"port": "7690",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 03:34:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Sayuran\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Protein\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Buah dan Snack\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"indomie rasa ayam bawang\",\n    \"description\": \"mie dengan rasa yang nendang ayam bawang goreng\",\n    \"weight\": 300,\n    \"price\": 2500,\n    \"image\": \"http://google.com/mie-indomie-ayam-bawang.jpg\",\n    \"categoryId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-dev}}/product",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"indomie rasa ayam bawang\",\n    \"description\": \"mie dengan rasa yang nendang ayam bawang goreng\",\n    \"weight\": 300,\n    \"price\": 2500,\n    \"image\": \"http://google.com/mie-indomie-ayam-bawang.jpg\",\n    \"categoryId\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-local}}/product",
+									"host": [
+										"{{url-local}}"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Mar 2024 08:17:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"7aec2d81-0313-42bf-8e0e-b40730e31ddf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/product?page=1&limit=10",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "bb78b8a4cab9",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "2000",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "3000",
+									"disabled": true
+								},
+								{
+									"key": "createdAt",
+									"value": "2024-03-18",
+									"disabled": true
+								},
+								{
+									"key": "productName",
+									"value": "wortel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:7690/product?page=1&limit=10",
+									"host": [
+										"localhost"
+									],
+									"port": "7690",
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "search",
+											"value": "bb78b8a4cab9",
+											"disabled": true
+										},
+										{
+											"key": "categoryId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "minPrice",
+											"value": "2000",
+											"disabled": true
+										},
+										{
+											"key": "maxPrice",
+											"value": "3000",
+											"disabled": true
+										},
+										{
+											"key": "createdAt",
+											"value": "2024-03-18",
+											"disabled": true
+										},
+										{
+											"key": "productName",
+											"value": "wortel",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 08:02:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1446"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": \"229af19a-1614-4ed4-9b4e-55f6e6d45e51\",\n            \"name\": \"Roti Whole Wheat\",\n            \"description\": \"Roti gandum utuh yang kaya serat dan nutrisi.\",\n            \"weight\": 350,\n            \"price\": 2500,\n            \"image\": \"http://example.com/roti-whole-wheat.jpg\",\n            \"categoryId\": 3,\n            \"createdAt\": \"2024-03-18T10:44:39.826+07:00\"\n        },\n        {\n            \"id\": \"36969d56-2f94-4d0e-a180-95019535256c\",\n            \"name\": \"Mie Goreng Pedas\",\n            \"description\": \"Mie instan dengan cita rasa pedas yang menggugah selera.\",\n            \"weight\": 320,\n            \"price\": 2700,\n            \"image\": \"http://example.com/mie-goreng-pedas.jpg\",\n            \"categoryId\": 3,\n            \"createdAt\": \"2024-03-18T10:44:39.826+07:00\"\n        },\n        {\n            \"id\": \"50e43bf2-4f37-4b4a-8d94-8fdd269170b0\",\n            \"name\": \"Bayam Organik\",\n            \"description\": \"Bayam segar organik, cocok untuk masakan dan salad.\",\n            \"weight\": 200,\n            \"price\": 1500,\n            \"image\": \"http://example.com/bayam.jpg\",\n            \"categoryId\": 1,\n            \"createdAt\": \"2024-03-18T10:43:39.826+07:00\"\n        },\n        {\n            \"id\": \"a9b94b89-20f8-4c79-94b9-2a15f14f3f2f\",\n            \"name\": \"Roti Cinnamon\",\n            \"description\": \"Roti cinnamon dengan aroma rempah yang harum.\",\n            \"weight\": 180,\n            \"price\": 2300,\n            \"image\": \"http://example.com/roti-cinnamon.jpg\",\n            \"categoryId\": 3,\n            \"createdAt\": \"2024-03-18T11:44:39.826+07:00\"\n        },\n        {\n            \"id\": \"cfc11644-b4c3-4bc7-bd16-83b2da0eeea5\",\n            \"name\": \"Roti Croissant\",\n            \"description\": \"Roti croissant lezat dengan lapisan yang renyah.\",\n            \"weight\": 200,\n            \"price\": 3000,\n            \"image\": \"http://example.com/roti-croissant.jpg\",\n            \"categoryId\": 3,\n            \"createdAt\": \"2024-03-18T10:45:39.826+07:00\"\n        }\n    ],\n    \"pagination\": {\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalData\": 5,\n        \"totalPage\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/product/229af19a-1614-4ed4-9b4e-55f6e6d45e51",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"product",
+								"229af19a-1614-4ed4-9b4e-55f6e6d45e51"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Product By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:7690/product/560dd0d3-8257-4f21-ae46-2cdaae854c54",
+									"host": [
+										"localhost"
+									],
+									"port": "7690",
+									"path": [
+										"product",
+										"560dd0d3-8257-4f21-ae46-2cdaae854c54"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 06:14:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"name\": \"Roti Manis\",\n        \"description\": \"Roti manis lembut dengan taburan gula halus di atasnya.\",\n        \"weight\": 250,\n        \"price\": 2200,\n        \"categoryId\": 3,\n        \"categoryName\": \"Buah dan Snack\",\n        \"image\": \"http://example.com/roti-manis.jpg\",\n        \"createdAt\": \"2024-03-20T10:46:39.826+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"indomie rasa ayam bawang cincang\",\n    \"description\": \"mie dengan rasa yang nendang ayam bawang goreng\",\n    \"weight\": 300,\n    \"price\": 2500,\n    \"image\": \"http://google.com/mie-indomie-ayam-bawang.jpg\",\n    \"categoryId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-dev}}/product/5f7fcd4d-1ef2-40fc-b6d1-d5a5d788a043",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"product",
+								"5f7fcd4d-1ef2-40fc-b6d1-d5a5d788a043"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"indomie rasa ayam bawang cincang\",\n    \"description\": \"mie dengan rasa yang nendang ayam bawang goreng\",\n    \"weight\": 300,\n    \"price\": 2500,\n    \"image\": \"http://google.com/mie-indomie-ayam-bawang.jpg\",\n    \"categoryId\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-dev}}/product/5f7fcd4d-1ef2-40fc-b6d1-d5a5d788a043",
+									"host": [
+										"{{url-dev}}"
+									],
+									"path": [
+										"product",
+										"5f7fcd4d-1ef2-40fc-b6d1-d5a5d788a043"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Mar 2024 09:44:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/product/36969d56-2f94-4d0e-a180-95019535256c",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"product",
+								"36969d56-2f94-4d0e-a180-95019535256c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url-dev}}/product/36969d56-2f94-4d0e-a180-95019535256c",
+									"host": [
+										"{{url-dev}}"
+									],
+									"path": [
+										"product",
+										"36969d56-2f94-4d0e-a180-95019535256c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Mar 2024 14:33:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
