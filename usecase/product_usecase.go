@@ -13,7 +13,7 @@ import (
 )
 
 type ProductUsecase interface {
-	CreateProduct(ctx context.Context, req dto.ProductRequest) (err error)
+	CreateProduct(ctx context.Context, req dto.ProductRequest) (resp dto.CreateProductResponse, err error)
 	GetListProduct(ctx context.Context, param paginate.Pagination) (resp []dto.ProductListResponse, count int64, err error)
 	GetDetailProduct(ctx context.Context, productId string) (resp dto.DetailProductResponse, err error)
 	UpdateProduct(ctx context.Context, productId string, req dto.ProductRequest) (err error)
@@ -32,7 +32,7 @@ func NewProductRepository(productRepo repository.ProductRepository, categoryRepo
 	}
 }
 
-func (s *defaultProductUsecase) CreateProduct(ctx context.Context, req dto.ProductRequest) (err error) {
+func (s *defaultProductUsecase) CreateProduct(ctx context.Context, req dto.ProductRequest) (resp dto.CreateProductResponse, err error) {
 	_, err = s.categoryRepo.FindById(ctx, req.CategoryID)
 	if err != nil {
 		logger.Error(ctx, "category product is not exist")
@@ -55,6 +55,7 @@ func (s *defaultProductUsecase) CreateProduct(ctx context.Context, req dto.Produ
 		return
 	}
 
+	resp.ID = reqProduct.ID
 	return
 }
 

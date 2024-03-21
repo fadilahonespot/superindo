@@ -34,3 +34,7 @@ type DetailProductResponse struct {
 	Image        string    `json:"image"`
 	CreatedAt    time.Time `json:"createdAt"`
 }
+
+type CreateProductResponse struct {
+	ID string `json:"id"`
+}

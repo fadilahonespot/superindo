@@ -40,12 +40,12 @@ func (h *ProductHandler) AddProduct(c echo.Context) (err error) {
 
 	logger.Info(ctx, "[Request]", req)
 
-	err = h.productUsecase.CreateProduct(ctx, req)
+	data, err := h.productUsecase.CreateProduct(ctx, req)
 	if err != nil {
 		return err
 	}
 
-	resp := response.ResponseSuccess(nil)
+	resp := response.ResponseSuccess(data)
 	return c.JSON(http.StatusOK, resp)
 }
 
