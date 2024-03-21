@@ -92,6 +92,7 @@ func (s *defaultProductUsecase) GetDetailProduct(ctx context.Context, productId 
 	}
 
 	resp = dto.DetailProductResponse{
+		ID:           data.ID,
 		Name:         data.Name,
 		Description:  data.Description,
 		Weight:       data.Weight,

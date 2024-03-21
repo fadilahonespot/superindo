@@ -42,7 +42,7 @@ func (s *defaultProductRepo) GetListProduct(ctx context.Context, param paginate.
 			db.Where("created_at LIKE ?", param.CreatedAt+"%")
 		}
 
-		if param.ProductName != "" {
+		if param.ProductName != "" && param.Search == "" {
 			db.Where("name LIKE ?", "%"+param.ProductName+"%")
 		}
 

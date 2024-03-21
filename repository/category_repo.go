@@ -9,7 +9,7 @@ import (
 
 type CategoryRepository interface {
 	FindAll(ctx context.Context) (resp []entity.Category, err error)
-	FindById(ctx context.Context, id int) (resp entity.Category, err error) 
+	FindById(ctx context.Context, id int) (resp *entity.Category, err error) 
 }
 
 type defaultCategoryRepo struct {
@@ -27,7 +27,7 @@ func (r *defaultCategoryRepo) FindAll(ctx context.Context) (resp []entity.Catego
 	return
 }
 
-func (s *defaultCategoryRepo) FindById(ctx context.Context, id int) (resp entity.Category, err error) {
+func (s *defaultCategoryRepo) FindById(ctx context.Context, id int) (resp *entity.Category, err error) {
 	err = s.db.WithContext(ctx).Take(&resp, "id = ?", id).Error
 	return
 }

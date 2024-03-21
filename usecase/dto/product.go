@@ -25,6 +25,7 @@ type ProductListResponse struct {
 }
 
 type DetailProductResponse struct {
+	ID           string    `json:"id"`
 	Name         string    `json:"name"`
 	Description  string    `json:"description"`
 	Weight       int       `json:"weight"`
