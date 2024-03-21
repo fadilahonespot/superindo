@@ -8,7 +8,7 @@ import (
 )
 
 type Product struct {
-	ID          uuid.UUID `gorm:"primarykey"`
+	ID          string `gorm:"primarykey"`
 	Name        string
 	Description string
 	Image       string
@@ -22,6 +22,6 @@ type Product struct {
 }
 
 func (r *Product) BeforeCreate(tx *gorm.DB) (err error) {
-	r.ID = uuid.New()
+	r.ID = uuid.New().String()
 	return
 }

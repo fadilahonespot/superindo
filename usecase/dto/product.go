@@ -2,8 +2,6 @@ package dto
 
 import (
 	"time"
-
-	"github.com/google/uuid"
 )
 
 type ProductRequest struct {
@@ -16,7 +14,7 @@ type ProductRequest struct {
 }
 
 type ProductListResponse struct {
-	ID          uuid.UUID `json:"id"`
+	ID          string    `json:"id"`
 	Name        string    `json:"name"`
 	Description string    `json:"description"`
 	Weight      int       `json:"weight"`
@@ -27,12 +25,12 @@ type ProductListResponse struct {
 }
 
 type DetailProductResponse struct {
-	Name         string `json:"name"`
-	Description  string `json:"description"`
-	Weight       int    `json:"weight"`
-	Price        int    `json:"price"`
-	CategoryID   int    `json:"categoryId"`
-	CategoryName string `json:"categoryName"`
-	Image        string `json:"image"`
-	CreatedAt   time.Time `json:"createdAt"`
+	Name         string    `json:"name"`
+	Description  string    `json:"description"`
+	Weight       int       `json:"weight"`
+	Price        int       `json:"price"`
+	CategoryID   int       `json:"categoryId"`
+	CategoryName string    `json:"categoryName"`
+	Image        string    `json:"image"`
+	CreatedAt    time.Time `json:"createdAt"`
 }
