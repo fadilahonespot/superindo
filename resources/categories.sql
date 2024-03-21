@@ -1,4 +1,4 @@
-INSERT INTO `categories` (`id`, `name`) VALUES
-(1, 'Sayuran'),
-(2, 'Protein'),
-(3, 'Buah dan Snack');
+INSERT INTO `categories` (`name`) VALUES
+('Sayuran'),
+('Protein'),
+('Buah dan Snack');

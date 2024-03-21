@@ -3,6 +3,7 @@ package database
 import (
 	"log"
 	"os"
+	"time"
 
 	"github.com/fadilahonespot/superindo/entity"
 	"gorm.io/gorm"
@@ -23,6 +24,7 @@ func Seeder(db *gorm.DB) *gorm.DB {
 		if err != nil {
 			log.Fatal(err)
 		}
+		time.Sleep(time.Duration(4) * time.Second)
 	}
 
 	var productCount int64
