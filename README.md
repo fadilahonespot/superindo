@@ -30,7 +30,7 @@ To run the application using Docker, follow these steps:
 
 ### Running on Local Machine
 To set up the application on your local machine, follow these steps:
-1. **Copy the `.env.example` file:**
+1. Copy the `.env.example` file:
 
    If you don't have an `.env` file, start by copying the provided `.env.example` file.
    
