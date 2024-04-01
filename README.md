@@ -69,6 +69,14 @@ To set up the application on your local machine, follow these steps:
     ```
     Replace the placeholder values (`your_database_name`, `your_database_user`, `your_database_password`) with your actual database information. Set `DB_DEBUG` to `true` if you want to enable query logging to the console.
 
+    ```
+    REDIS_HOST=your_redis_host
+    REDIS_PORT=your_redis_port
+    REDIS_PASSWORD=your_redis_password
+    REDIS_USERNAME=your_redis_username
+    ```
+    Replace the placeholder values (`your_redis_host`, `your_redis_port`, `your_redis_password`, `your_redis_username`) with your actual redis information.
+
 4. Logger Configuration:
 
     Add the following lines for logger configuration:
@@ -97,7 +105,7 @@ To set up the application on your local machine, follow these steps:
     Execute the following command to run unit tests and generate a coverage report:
 
     ```
-    make test-coverage
+    make test
     ```
 
 ## Additional
